@@ -82,7 +82,7 @@ public class Restaurant {
     public String getName() {
         return name;
     }
-
+//method to calculate order value from selected menu items.
     public int calculateTotalOrderCost(List<String> itemNames){
         int orderTotal = 0;
         for(String name: itemNames){
