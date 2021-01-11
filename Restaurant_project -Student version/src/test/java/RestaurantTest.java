@@ -74,4 +74,15 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public  void calculate_order_value_method_should_sum_the_menu_item_prices(){
+        restaurant =new Restaurant("Mani's cafe","Delhi",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.selectItemForOrder("Sweet corn soup");
+        restaurant.selectItemForOrder("Vegetable lasagne");
+        int actualOrderAmount = restaurant.calculateTotalOrderCost(restaurant.getItems());
+        assertEquals(388, actualOrderAmount);
+
+    }
 }
