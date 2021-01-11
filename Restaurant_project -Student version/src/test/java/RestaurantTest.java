@@ -24,8 +24,6 @@ class RestaurantTest {
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant = Mockito.spy(restaurant);
         Mockito.when(restaurant.getCurrentTime()).thenReturn(restaurant.openingTime.plusHours(2));
-        //Mockito.when(restaurant.isRestaurantOpen()).thenCallRealMethod();
-
         assertEquals(true,restaurant.isRestaurantOpen());
     }
 
@@ -35,8 +33,6 @@ class RestaurantTest {
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant = Mockito.spy(restaurant);
         Mockito.when(restaurant.getCurrentTime()).thenReturn(restaurant.openingTime.minusHours(2));
-        //Mockito.when(restaurant.isRestaurantOpen()).thenCallRealMethod();
-
         assertEquals(false,restaurant.isRestaurantOpen());
 
     }
